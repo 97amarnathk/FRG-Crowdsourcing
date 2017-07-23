@@ -1,88 +1,81 @@
-[![Scifabric](https://img.shields.io/badge/made%20by-scifabric-blue.svg)](https://scifabric.com/)
-[![Build Status](https://circleci.com/gh/Scifabric/pybossa/tree/master.svg?style=shield)](https://circleci.com/gh/Scifabric/pybossa) [![Code Health](https://landscape.io/github/Scifabric/pybossa/master/landscape.svg?style=flat)](https://landscape.io/github/Scifabric/pybossa/master) 
-[![Build Status](https://travis-ci.org/Scifabric/pybossa.svg?branch=master)](https://travis-ci.org/Scifabric/pybossa) [![Code Health](https://landscape.io/github/Scifabric/pybossa/master/landscape.svg?style=flat)](https://landscape.io/github/Scifabric/pybossa/master) 
- [![Coverage
-Status](https://img.shields.io/coveralls/Scifabric/pybossa.svg)](https://coveralls.io/r/Scifabric/pybossa?branch=master)
-[![Documentation](https://readthedocs.org/projects/pybossa/badge/?version=latest)](http://docs.pybossa.com) [![License](http://img.shields.io/badge/license-agplv3-b75bb6.svg)](http://www.gnu.org/licenses/agpl-3.0.html) [![Slack](http://slackin.crowdcrafting.org/badge.svg)](http://slackin.crowdcrafting.org) 
-[![DOI](https://zenodo.org/badge/12868/PyBossa/pybossa.svg)](https://zenodo.org/badge/latestdoi/12868/PyBossa/pybossa)
+# CROWD-SOURCING PLATFORM FOR NATIONAL VIRTUAL LIBRARY OF INDIA
 
+National virtual library of India (NVLI) is a platform for storing digital assets of India. The digital assets uploaded to this library have to be made searchable. For this purpose appropriate metadata tags need to be associated with every digital asset. The best person to tag the assets is the creator. However most of the creators leave them untagged making it inappropriate for search engines. The crowd-sourcing platform will distribute the tagging among many users thus facilitating the search engines.
 
-PYBOSSA is an open source platform for crowd-sourcing online (volunteer)
-assistance to perform tasks that require human cognition, knowledge or
-intelligence (e.g. image classification, transcription, information location
-etc).
+## Table of contents
+- [Description](#description)
+- [Content](#content)
+- [Usage](#usage)
+  - [Create New Project](#create-new-project)
+  - [Add New Task](#add-new-task)
+  - [Contribute to a task](#contribute-to-a-task)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [Authors](#authors)
+- [License](#license)
 
-Actividad subvencionada por el Ministerio de Educación, Cultura y Deporte
+## Description
 
-![Ministerio de Educación, Cultura y Deporte](http://i.imgur.com/4ShmIt1.jpg)
+Digital Assets to be made searchable need to be tagged when stored in the repository. However, it is not possible for one person to tag all the digital assets as it is a very tedious task. To ease this process the work can be crowd-sourced using this platform. Authorized users can add tasks to be tagged. Images, Audio files, Video files and documents can be uploaded for tagging. Task Redundancy can be set which indicates the minimum number of times each entity needs to be tagged. Once an asset is tagged for the required number of times, the tags are saved and the image is not available for further tagging. Tags can be later reviewed to ensure minimum error in the tags given by users.
 
-PyBossa was inspired by the [BOSSA](http://bossa.berkeley.edu/) crowdsourcing engine but is written in
-python (hence the name!). It can be used for any distributed tasks project
-but was initially developed to help scientists and other researchers
-crowd-source human problem-solving skills!
+## Content
 
-# See it in Action
+## Usage
 
-PyBossa powers [Crowdcrafting.org](http://crowdcrafting.org/) and [MicroPast](http://crowdsourced.micropasts.org/) a joint project by British Museum and University College of London.
+### Create New Project
 
-# Installing and Upgrading
+- User must login as an administrator to Create a new Project.
+- Click on the Create option as shown.
+- Give an appropriate name and description to the project.
+- Enter the possible domain associated with the project.
+- Click on Create Button to complete the project creation.
 
-**Important: if you are updating a server, please, be sure to check the
-Database Migration scripts, as new changes could introduce new tables,
-columns, etc, in the DB model. See the [Updating Section](http://docs.pybossa.com/en/latest/install.html#updating-pybossa) from the
-documentation**
+### Add new task 
 
-See [installation instructions](http://docs.pybossa.com/en/latest/installing_pybossa.html).
+- User must login as an administrator to add tasks to any project.
+- The user can find published projects after logging in.
+- Select the required project from the available options.
+- Click on the Add Task button as shown.
+- Select the type of files to be uploaded.
+- Upload the files in a compressed format.
+- Select meta-data tags required for the question.
+- Click on Add Task to create the task.
 
-# Testing
+### Contribute To a Task
 
-## Unit testing
+- Any user can contribute to available tasks.
+- User has to select a project he or she wishes to contribute.
+- The system will allocate some number of tasks for the user to solve.
+- The user has to solve the given tasks and submit his or her responses.
+- A new project can be choses to contribute for if the user wishes to.
 
-Just run:
+## Contributing
+
+To contribute to the project, clone the repository using git
 
 ```
-  nosetests test/
+git clone https://github.com/97amarnathk/FRG-Crowdsourcing.git
 ```
 
-## Browser testing
+Read the PyBossa Documentation [here][1]
 
-[![BrowserStack](http://i.imgur.com/Pg0utrk.png)](http://browserstack.com/)
+## Developers
 
-Thanks to the support of [BrowserStack](http://browserstack.com/) we can do real cross browser testing on multiple desktop and mobile platforms.
+**Gaurav Mishra**
+- <https://github.com/grms96>
 
-# Useful Links
+**Saket Karve**
+- <https://github.com/Saket-Karve>
 
-* [Documentation](http://docs.pybossa.com/)
-* [Mailing List](http://lists.okfn.org/mailman/listinfo/open-science-dev)
+**Shruthi Nadigoti**
+- <https://github.com/Shruthi-Nadigoti>
 
-# Contributing
+**Amarnath Karthi**
+- <https://github.com/97amarnathk>
 
-If you want to contribute to the project, please, check the
-[CONTRIBUTING file](CONTRIBUTING.md).
+## License
 
-It has the instructions to become a contributor.
 
-## Acknowledgments
-
-* [Open Knowledge Foundation](http://okfn.org/)
-* [FontAwesome fonts](http://fortawesome.github.com/Font-Awesome/)
-* [GeoLite data by MaxMind](http://www.maxmind.com)
-
-Special thanks to Shuttleworth Foundations for funding us and their true support:
-* [Shuttleworth Foundation](https://www.shuttleworthfoundation.org/)
-![Shuttleworth Foundation Funded](http://pybossa.com/assets/img/shuttleworth-funded.png)
-
-## Copyright / License
-
-Copyright 2015 [SciFabric LTD](http://scifabric.com).
-
-Source Code License: The GNU Affero General Public License, either version 3 of the License
-or (at your option) any later version. (see COPYING file)
-
-The GNU Affero General Public License is a free, copyleft license for
-software and other kinds of works, specifically designed to ensure
-cooperation with the community in the case of network server software.
-
-Documentation and media is under a Creative Commons Attribution License version
-3.
+[1]:http://docs.pybossa.com/en/latest/build_with_pybossa.html
+>>>>>>> origin/master
 
