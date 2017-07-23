@@ -1,0 +1,9 @@
+{%- if pagename != "search" %}
+<form class="navbar-search" action="{{ pathto('search') }}" method="get">
+  <input type="text" name="q" placeholder="Search" class="search-query col-lg-12"/>
+  <span class="fa fa-search form-control-feedback" aria-hidden="true"></span>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+<br/>
+{%- endif %}

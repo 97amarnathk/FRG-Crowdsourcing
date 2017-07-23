@@ -1,0 +1,124 @@
+{% extends "basic/layout.html" %}
+{% set script_files = script_files + ['_static/js/bootstrap.min.js', '_static/js/custom.js', '_static/js/wow.min.js', '_static/js/jquery.scrolldepth.min.js'] %}
+{% set css_files = ['_static/css/bootstrap.css', '_static/css/bootstrap-theme.css', '_static/animate.css', '_static/css/sphinx.css']%}
+
+{%- block doctype %}
+<!DOCTYPE html>
+{% endblock %}
+
+{%- block extrahead %}
+	<meta charset="utf-8">
+	<title>PYBOSSA</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="PYBOSSA is the ultimate crowdsourcing framework to analyze or enrich data that can't be processed by machines alone.">
+	<meta name="author" content="Scifabric LTD">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="_static/css/bootstrap.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="_static/css/bootstrap-theme.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700|Inconsolata' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,700">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,200,200italic,300,700,700italic,900italic,900,300italic' rel='stylesheet' type='text/css'>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="../_static/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../_static/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../_static/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../_static/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="../_static/ico/apple-touch-icon-57-precomposed.png">
+
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="_static/animate.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+{% endblock %}
+{% block header %}
+{% include "gtm.html" %}
+<script>
+jQuery(function() {
+  jQuery.scrollDepth();
+});
+</script>
+
+{% include "navbar.html" %}
+{% endblock %}
+
+{# Silence the sidebar's, relbar's #}
+{% block sidebar1 %}{% endblock %}
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
+
+{%- block content %}
+
+
+{% if pagename == "index" %}
+<div class="container-fluid first-container bluebanner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-8">
+                <h1>Read. Learn. Build.</h1>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <img class="mascot" src="_static/img/nick-docs.png"></img>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+    
+<div class="container {% if pagename != 'index'%} first-container {% endif %} content">
+        <div class="row">
+            <div class="hidden-xs col-sm-4 col-md-4 mytoc">
+                {% include "searchbox.html" %}
+                {% block sidebar2 %}
+                {{ sidebar() }}
+                {% endblock %}
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8">
+               {% block body %} {% endblock %}
+            </div>
+        </div>
+    </div>
+{%- endblock %}
+
+{%- block footer %}
+{% include "footer.html" %}
+{% endblock %}
+
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+	new WOW().init();
+
+	$(document).ready(function() {
+
+		/*Set height of sections to window height*/	   
+		$( ".opening" ).each(function(){
+			var $this = $(this);
+			if ($(window).height() >= "800") {
+				$this.css({'min-height':'770px'});
+			}
+			if ($(window).width() <= "768") {
+				$this.css({'min-height':'520px'});
+			}
+
+			/*Recalculate on window resize*/
+			$(window).resize(function(){
+				if ($(window).height() <= "801") {
+					$this.css({'min-height':($(window).height()-30)+'px'});
+				}
+				if ($(window).width() <= "768") {
+					$this.css({'min-height':'520px'});
+				}
+			});
+		});
+	});
+	</script>
